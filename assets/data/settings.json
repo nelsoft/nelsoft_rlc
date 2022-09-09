@@ -1,0 +1,15 @@
+{
+	"clientName":"Vikings",
+	"devices": [{
+		"deviceId":"58928587",
+		"directory":"C:/"
+	},
+	{
+		"deviceId":"58928588",
+		"directory":"C:/"
+	}],
+	"FTPAddress":"112.119.91.14",
+	"FTPUsername":"accredit",
+	"FTPPassword":"RLC@Partners",
+	"destinationPath":"IT_Tenants"
+}

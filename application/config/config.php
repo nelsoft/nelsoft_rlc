@@ -26,7 +26,7 @@ $config['base_url']	= 'http://192.168.1.50:82/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'controlpanel';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

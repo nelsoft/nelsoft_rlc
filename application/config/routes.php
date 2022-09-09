@@ -38,8 +38,13 @@
 |
 */
 
-$route['default_controller'] = "login";
+$route['default_controller'] = "welcome";
 $route['404_override'] = '';
+$route['mall-file-server/v1/get-report'] = 'GetReport';
+$route['mall-file-server/v1/report-status'] = 'ReportStatus';
+$route['mall-file-server/v1/resend-report'] = 'ResendReport';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
+$route['mall-file-server/example/users/(:num)'] = 'api/example/users/id/$1'; // Example 4
+$route['mall-file-server/example/users/(:num)(\.)([a-zA-Z0-9_-]+)(.*)'] = 'api/example/users/id/$1/format/$3$4'; // Example 8

@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database', 'form_validation', 'zip');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('html', 'url', 'nelsoft_jamfncs_helper', 'file' ,'db_data_fncs');
+$autoload['helper'] = array('html', 'url', 'file');
 
 
 /*
@@ -96,7 +96,7 @@ $autoload['config'] = array();
 |
 */
 
-$autoload['language'] = array('lbldisp');
+$autoload['language'] = array();
 
 
 /*
