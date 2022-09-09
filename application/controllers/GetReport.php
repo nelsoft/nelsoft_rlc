@@ -16,9 +16,27 @@ class GetReport extends CI_Controller{
 		$raw_param = explode("&", $_SERVER['QUERY_STRING']);
 		$param = [];
 
+		if( !isset($token) || $token == "" ){
+			$this->output->set_status_header('401');
+			echo json_encode("Invalid token");
+			exit;
+		}
+
 		foreach ($raw_param as $value) {
 			$keyvalue = explode("=", $value);
 			$param[$keyvalue[0]] = $keyvalue[1];
+		}
+
+		if( !isset($param['date']) || !isset($param['success'])){
+			$this->output->set_status_header('400');
+			echo json_encode("Incomplete headers");
+			exit;
+		}
+
+		if( $param['date']== "" || $param['success']== ""){
+			$this->output->set_status_header('400');
+			echo json_encode("Incomplete headers");
+			exit;
 		}
 
 		if($param['success'] == "1"){
@@ -44,6 +62,12 @@ class GetReport extends CI_Controller{
 				$file = $fs->getLatestFile( $filefolder, $param['date'] );
 				$sentfolder = $filefolder."/sent/";
 
+				if($file == ""){
+					$this->output->set_status_header('404');
+					echo json_encode("File not found");
+					exit;
+				}
+
 	        	sleep(5);
 	        	$this->output->set_status_header('200');
 			    header('Content-Description: File Transfer');
@@ -59,6 +83,10 @@ class GetReport extends CI_Controller{
 			    copy($file, $sentfolder.$filename); # copy to sent folder
 			    echo json_encode("Success");
 			    exit;
+			}
+			else{
+				$this->output->set_status_header('401');
+				echo json_encode("Invalid token");
 			}
 		}
 		else{

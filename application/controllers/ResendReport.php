@@ -16,9 +16,26 @@ class ResendReport extends CI_Controller{
 		$raw_param = explode("&", $_SERVER['QUERY_STRING']);
 		$param = [];
 
+		if( !isset($token) || $token == "" ){
+			$this->output->set_status_header('401');
+			echo json_encode("Invalid token");
+		}
+
 		foreach ($raw_param as $value) {
 			$keyvalue = explode("=", $value);
 			$param[$keyvalue[0]] = $keyvalue[1];
+		}
+
+		if( !isset($param['date']) || !isset($param['success'])){
+			$this->output->set_status_header('400');
+			echo json_encode("Incomplete headers");
+			exit;
+		}
+
+		if( $param['date']== "" || $param['success']== ""){
+			$this->output->set_status_header('400');
+			echo json_encode("Incomplete headers");
+			exit;
 		}
 
 		if($param['success'] == "1"){
@@ -44,8 +61,14 @@ class ResendReport extends CI_Controller{
 				$file = $fs->getLatestFile( $filefolder, $param['date'] );
 				$filename = substr( $file, strrpos($file, "/")+1 );
 				$sentfolder = $filefolder."/sent/";
-				$newbatch = intval( substr( $file, -1 ) ) + 1;
 
+				if($file == ""){
+					$this->output->set_status_header('404');
+					echo json_encode("File not found");
+					exit;
+				}
+
+				$newbatch = intval( substr( $file, -1 ) ) + 1;
 				if($newbatch == 10){
 					$newbatch = 1;
 				}
@@ -61,12 +84,16 @@ class ResendReport extends CI_Controller{
 			    header('Expires: 0');
 			    header('Cache-Control: must-revalidate');
 			    header('Pragma: public');
-			    header('Content-Length: ' . filesize($newFile));
-			    readfile($newFile);
+			    header('Content-Length: ' . filesize($filefolder."/".$newFile));
+			    readfile($filefolder."/".$newFile);
 
 			    copy( $filefolder."/".$newFile, $sentfolder."/".$newFile ); # copy to sent folder
 			    echo json_encode("Success");
 			    exit;
+			}
+			else{
+				$this->output->set_status_header('401');
+				echo json_encode("Invalid token");
 			}
 		}
 		else{
