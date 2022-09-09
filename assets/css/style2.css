@@ -1,0 +1,235 @@
+@font-face{
+	font-family: Roboto-Medium;
+	src: url("../fonts/Roboto-Medium.ttf");
+}
+@font-face{
+	font-family: Montserrat-Bold;
+	src: url("../fonts/Montserrat-Bold.ttf");
+}
+@font-face{
+	font-family: Montserrat-Regular;
+	src: url("../fonts/Montserrat-Regular.ttf");
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+html, body{
+	width: 100%;
+	height: 100%;
+	background: #2c3e50;
+}
+.main-content{
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+.main-divide{
+	width: 100%;
+	float: left;
+}
+.each-panel-emp{
+	width: 514px;
+	height: 100px;
+	background: #ecf0f1;
+	margin-top: 10px;
+	margin-left: 16px;
+	border-radius: 5px;
+	float: left;
+}
+.side-content{
+	width: 270px;
+	position: absolute;
+	right: 0;
+	margin-right: 10px;
+	height: 97%;
+}
+.div-side{
+	width: 100%;
+	background: #34495e;
+	margin-top: 10px;
+	float: right;
+}
+.div-side-second{
+	width: 100%;
+	/*background: #34495e;*/
+	margin-top: 15px;
+	border-radius: 5px;
+	float: right;
+}
+.div-side-page{
+	width: 100%;
+	border-radius: 5px;
+	font-size: 50px;
+	color: #fff;
+	font-family: Roboto-Medium;
+	position: absolute;
+	bottom: 0;
+}
+.img-employee{
+	margin-top: 5px;
+	margin-left: 6px;
+	width: 66px;
+	height: 66px;
+	border-radius: 5px;
+	float: left;
+	border: 4px #fff solid;
+}
+.each-panel-details{
+	float: left;
+	width: 425px;
+	font-family: Roboto-Medium;
+	text-align: left;
+	margin-top: 3px;
+	margin-left: 9px;
+}
+.issue-number{
+	font-size: 20px;
+}
+.reporter{
+	font-size: 17px;
+}
+.problem-type{
+	font-size: 16.5px;
+}
+.report{
+	font-size: 18px;
+	height: 25px;
+}
+.date{
+	margin-top: 5px;
+	margin-right: 5px;
+}
+.days{
+	margin-right: 5px;
+}
+.duration, .resolved-duration{
+	/*margin-top: 25px;*/
+	margin-right: 5px;
+	font-size: 18px;
+	font-family: Montserrat-Bold;
+}
+.resolved-duration{
+	color: #376803;
+}
+.duration-alert{
+	color: #af0303;
+}
+.day-status{
+	font-size: 24px;
+	font-family: Montserrat-Bold;
+}
+.hour-status{
+	font-size: 24px;
+}
+.minutes-status{
+	font-weight: normal;
+	font-family: Montserrat-Regular;
+}
+.right-panel-details{
+	float: right;
+	font-family: Roboto-Medium;
+	font-size: 17px;
+	text-align: right;
+	position: relative;
+	bottom: 75px;
+}
+.new{
+	background: #FCBDBD;
+}
+.assigned{
+	background: #C2DFFF;
+	/*color: #026a87;*/
+}
+.resolved{
+	background: #D2F5B0;
+}
+.closed{
+	background: #C9CCC4;
+}
+
+.feedback{
+	background: #E3B7EB;
+}
+
+.img-logo{
+	margin-top: 5px;
+	margin-left: 16px;
+	height: 90px;
+}
+.img-div{
+	float: left;
+}
+.page-div{
+	font-family: Roboto-Medium;
+	font-size: 75px;
+	color: #ccc;
+	float: left;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+.header-status{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	background: #526f8c;
+	color: white;
+	font-family: Montserrat-Bold;
+	width: 100%;
+	font-size: 24px;
+	float: left;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.header-total{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	text-align: left;
+	background: #526f8c;
+	color: white;
+	font-family: Montserrat-Bold;
+	width: 96.2%;
+	font-size: 24px;
+	float: left;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.status-contents{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	font-family: Montserrat-Regular;
+	color: white;
+	width: 96.2%;
+	float: left;
+	text-align: left;
+	font-size: 21px;
+}
+.status-label{
+	float: left;
+}
+.status-number{
+	float: right;
+	padding-right: 10px;
+}
+.new-color{
+	background: #FCBDBD;
+	color: #af0303;
+}
+.assigned-color{
+	background: #C2DFFF;
+	color: #1c4f87;
+}
+.resolved-color{
+	background: #D2F5B0;
+	color: #376803;
+}
+.feedback-color{
+	background: #E3B7EB;
+	color: #376803;
+}
+.closed-color{
+	background: #C9CCC4;
+	color: #5b5858;
+}

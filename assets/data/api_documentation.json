@@ -1,0 +1,500 @@
+﻿{
+    "APIs": [
+        {
+            "guidlines": { 
+                "api_documentation guide":"",
+                "the api's need the required details:":"",
+                "- 'api' = APIs title/ name'. Appears on the sidebar selection and title on the body part":"",
+                "- 'description' = APIs short description":"",
+                "- 'endpoint' = APIs endpoint it must be a link to access the API":"",
+                "- 'headers' = APIs headers":"",
+                "- 'body' = APIs body or json. It must be on the json format if the body is json":"",
+                "- 'success' = APIs success message":"",
+                "- 'errors' = APIs error message":"",
+                "this json file is sensitive when you put a wrong format, it can lead to errors on the api documentation.":"",
+                "\r\n symbol is for the next line":"",
+                "NOTE!: DO NOT REMOVE THIS PART FOR DOCUMENTATION PURPOSE. PROCEED TO THE NEXT JSON.":""
+                }
+        },
+        {
+            "api": "Accreditation Errors API",
+            "description": "To create an api to handle and store accrediation errors.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/acred_error/acred_error",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "ErrorCode" : "INCORRECT_ACCREDITATION",
+                    "DeviceID" : "52254749",
+                    "TerminalNo" : "01",
+                    "ClientID" : "1000",
+                    "ClientNetworkID" : "1000",
+                    "BranchID" : "10",
+                    "MallKeyword" : "AYALALAN",
+                    "LevelError" : "2",
+                    "POSType" : "Lettuce"
+                },
+            "success": "Status Code: [200] Save accrediation errors",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Autosync Online API",
+            "description": "To create an api to handle and store autosync status of nelsoft clients.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/error_reports/error_reports",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "datetime" : "2021-06-07 13:34:45",
+                    "status" : "online",
+                    "terminalno" : "0"
+                },
+            "success": "Status Code: [200] Save status of autosync",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Autosync Settings API",
+            "description": "To create an api to store the autosync settings for nelsoft clients.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/autosync/settings",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "BackupDirectory" : "C:/Users/Administrator/Dropbox/Juan68LaoagDBBackUp",
+                    "BackupTime" : "10:00,18:00",
+                    "BackupTimeProdPic" : "19:00",
+                    "BranchId" : "11",
+                    "Database" : "nelsoft",
+                    "directory" : "C:NSWS_1AutoSyncAutoSync",
+                    "EnableInternetTimeSynchronize" : "1",
+                    "InitialBackupDirectory" : "",
+                    "MaxBackupCount" : "4",
+                    "BranchId" : "11",
+                    "Password" : "L1Atl7wsLluTiwiEQl6C9A==",
+                    "Port" : "3306",
+                    "ProdPicFolder" : "C:/prodpic/",
+                    "ProductSyncMode" : "1",
+                    "RecomputePermission" : "0",
+                    "Server" : "11",
+                    "Database" : "nelsoft",
+                    "SuperadminMode" : "0",
+                    "SyncOutletProducts" : "1",
+                    "TerminalNumber" : "1",
+                    "TerminalSyncOnly" : "1",
+                    "TerminalSyncTable" : "terminalsync",
+                    "TimeSyncInterval" : "30",
+                    "UpdaterClientId" : "13",
+                    "UpdaterClientSecret" : "TYD4g8hRII272j95L5E4Kw9XPZkndE5ymfDM29jf",
+                    "UpdaterUrl" : "apps.cirms.ph",
+                    "Username" : "root",
+                    "version" : "4.0.4.4"
+                },
+            "success": "Status Code: [200] Save autosync settings",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "AWS Session Token API",
+            "description": "To create an api to send Amazon Session token to be used in AWS.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/AWS/AWS",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "clientId" : "1000",
+                    "clientNetworkId" : "1000",
+                    "clientBranchid" : "1000",
+                    "posType" : "1",
+                    "type" : "1",
+                    "--" : "--",
+                    "uuid" : "a1f5f49f-b970-b94f-723c-0f3f560c3cfd",
+                    "---" : "---",
+                    "terminalNo" : "78787878",
+                    "----" : "----",
+                    "clientBranchId" : "1000",
+                    "posType" : "1",
+                    "terminalNo" : "2"
+                },
+            "success": "Status Code: [200] Send AWS Session Token",
+            "errors": "Status: Missing required fields.Status Code: [406] Not Acceptable \r\nStatus: Incomplete required fields. Status Code: [406] Not Acceptable\r\nStatus: Client details doesn't exist. Status Code: [406] Not Acceptable"
+        },
+        {
+            "api": "AWS Backup API",
+            "description": "To create an api to handle fetching data from AWS Backup.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/AWSBackup/initialize_s3\r\nhttp://client-api.nelsoft.ph/api/v1/AWSBackup/gets3file\r\nhttp://client-api.nelsoft.ph/api/v1/AWSBackup/gets3filedetail",
+            "headers": "none required",
+            "body": {
+                    "uuid" : "a1f5f49f-b970-b94f-723c-0f3f560c3cfd"
+                },
+            "success": "Status Code: [200] Send AWS Backup Details",
+            "errors": "Status: Missing required fields.Status Code: [406] Invalid Headers \r\nStatus: Incomplete required fields. Status Code: [406] Invalid Headers"
+        },
+        {
+            "api": "Database Setting API",
+            "description": "To create an api to handle storing database setting from nelsoft devices.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/database/settings",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                   "backup_directory" : "C:/Users/Administrator/Dropbox/Juan68LaoagDBBackUp",
+                    "datetime" : "2022-03-03 03:00:03",
+                    "innodb_buffer_pool_size" : "1.00 GB",
+                    "last_backup_date" : "",
+                    "total_size" : "8440.8",
+                    "version" : "3.3"
+                },
+            "success": "Status Code: [200] Save database settings",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Error Report API",
+            "description": "To create an api to handle error reporting from various nelsoft clients.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/error/report",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "datetime" : "2021-06-07 13:34:45",
+                    "errorcode" : "P0002",
+                    "details" : "No value on possettings table"
+                },
+            "success": "Status Code: [200] Save error reports",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Error Reports API",
+            "description": "To create an api to handle error reporting of different nelsoft clients.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/error_reports/error_reports",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "Date" : "2021-06-07 13:34:45",
+                    "FileName" : "1000000001220607.txt",
+                    "ErrorCode" : "INCORRECT_OLD_NEW_GRANDTOTAL",
+                    "DeviceID" : "52254749"
+                },
+            "success": "Status Code: [200] Save error reports",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Hardware Settings API",
+            "description": "To create an api to handle storing hardware setting from nelsoft clients.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/hardware/settings",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "computer_name" : "1031-13-POS03",
+                    "forced_shutdown_date" : "2022-05-01T07:24:53.000",
+                    "location" : "Bacolod City, Philippines",
+                    "macaddress" : "7427EAE3FD55",
+                    "public_ip" : "120.28.236.194",
+                    "static_ip" : "192.168.1.103",
+                    "storage_left" : "256909.9 MB"
+                },
+            "success": "Status Code: [200] Save hardware settings",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Hardware Unitspecs API",
+            "description": "To create an api to handle storing hardware unitspecs from nelsoft clients.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/hardware/unitspecs",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "architecture" : "32 bit",
+                    "OS" : "Microsoft Windows NT 6.1.7601 Service Pack 1",
+                    "processor" : "Intel(R) Pentium(R) CPU G3220 @ 3.00GHz",
+                    "ram" : "1938.875"
+                },
+            "success": "Status Code: [200] Save hardware unitspecs",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Installation API",
+            "description": "To create an api to create new terminal entry in clientbase.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/installation/confirm",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "clientid" : "1000",
+                    "clientnetwork" : "1000",
+                    "branchid" : "10"
+                },
+            "success": "Status Code: [200] Save terminal",
+            "errors": "Status: Invalid input of client information. please verify if it exists in the server. Status Code: [401]"
+        },
+        {
+            "api": "POS Settings API",
+            "description": "To create an api to handle storing pos settings.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/pos/settings",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "settings" : "text",
+                    "branchid" : "10",
+                    "colortheme" : "0",
+                    "com" : "3",
+                    "-" : "-",
+                    "setting" : "database",
+                    "database" : "database",
+                    "userid" : "root",
+                    "accreditation" : ""
+                },
+            "success": "Status Code: [200] Save pos settings",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Pos Readings API",
+            "description": "To create an api to handle stroring pos readings.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/pos/readings",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "source" : "0",
+                    "id" : "394",
+                    "readcount" : "95",
+                    "readtype" : "3",
+                    "startor" : "13010000098",
+                    "endor" : "13010000098",
+                    "date" : "1000",
+                    "readingdate" : "2018-05-07 09:46:49",
+                    "MallKeyword" : "2018-05-07 12:00:00",
+                    "terminal" : "1",
+                    "branchid" : "12",
+                    "oldgrandtotal" : "196424.000000",
+                    "newgrandtotal" : "209424.000000",
+                    "lock" : "1",
+                    "txtfilename" : "",
+                    "batch" : "1",
+                    "sent" : "0",
+                    "total_discount_amt" : "0.000000",
+                    "vat_returns_amt" : "0.000000",
+                    "nonvat_returns_amt" : "0.000000",
+                    "senior_returns_amt" : "0.000000",
+                    "cash_sales_amt" : "13000.000000",
+                    "credit_sales_amt" : "0.000000",
+                    "debit_sales_amt" : "0.000000",
+                    "bank_sales_amt" : "0.000000",
+                    "gift_sales_amt" : "0.000000",
+                    "senior_sales_amt" : "0.000000",
+                    "vatable_sales_amt" : "13000.000000",
+                    "nonvat_returns_amt" : "0.000000",
+                    "total_qty_sold" : "100",
+                    "total_qty_void" : "0",
+                    "void_trans_amt" : "0.000000",
+                    "sucess_trans_cnt" : "1.000000",
+                    "return_qty_cnt" : "0",
+                    "member_points_amt" : "0.000000",
+                    "senior_pwd_vat_amt" : "0.000000",
+                    "senior_pwd_vat_discount" : "0.000000"
+                },
+            "success": "Status Code: [200] Save pos readings",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Pos Ptu API",
+            "description": "To create an api to handle storing POS PTU data.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/pos/ptu",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "acc":"03840000317000054045982",
+                    "address" : "PASTRANA ST.POBLACION,KALIBO,AKLAN",
+                    "approvaldate" : "2014-02-25",
+                    "branchid" : "13",
+                    "businessname" : "FU'S MERCHANDISE DE KALIBO,INC",
+                    "isvat" : "1",
+                    "min" : "140348256",
+                    "owner" : "FU'S MERCHANDISE DE KALIBO,INC.",
+                    "permitno" : "0214-071-181445-000",
+                    "sn" : "NTI0032P04021401",
+                    "sqlport" : "3306",
+                    "terminal" : "1",
+                    "tin" : "442-070-107-000"
+                },
+            "success": "Status Code: [200] Save pos ptu",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Pos Identity API",
+            "description": "To create an api to store config logs and sync setting logs.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/pos_identity/pos_identity",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details] \r\n[licensekey:0955D-JY218-74DBH-2HBHJ]",
+            "body": {
+                    "config" : "",
+                    "clientid" : "1000",
+                    "clientgroupid" : "1001",
+                    "datetime" : "2018-05-07 09:46:49",
+                    "-":"-",
+                    "sync_setting" : "",
+                    "itemsperpage" : "2500",
+                    "clientgroupid" : "200",
+                    "datetime" : "2018-05-07 09:46:49"
+                },
+            "success": "Status Code: [200] Save config and sync settings",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Get Uuid API",
+            "description": "To create an api to handle getting uuid for pos installation.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/posinstaller/get_uuid",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "clientId" : "1000",
+                    "clientNetworkId" : "1000",
+                    "clientBranchid" : "1000",
+                    "posType" : "1",
+                    "type" : "1",
+                    "--" : "--",
+                    "uuid" : "a1f5f49f-b970-b94f-723c-0f3f560c3cfd",
+                    "---" : "---",
+                    "terminalNo" : "78787878",
+                    "----" : "----",
+                    "clientBranchId" : "1000",
+                    "posType" : "1",
+                    "terminalNo" : "2"
+                    },
+            "success": "Status Code: [200] send uuid",
+            "errors": "Status: Missing required fields.Status Code: [406] Not Acceptable \r\nStatus: Incomplete required fields. Status Code: [406] Not Acceptable\r\nStatus: Client details doesn't exist. Status Code: [406] Not Acceptable"
+        },
+        {
+            "api": "Pos Updater Validate Client Details API",
+            "description": "To create an api to handle sending installation credentials to be used by pos using v2 installation API.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/posupdater/validate_client_details",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "clientId" : "1000",
+                    "clientNetworkId" : "1000",
+                    "clientBranchid" : "1000",
+                    "posType" : "1",
+                    "type" : "1",
+                    "--" : "--",
+                    "uuid" : "a1f5f49f-b970-b94f-723c-0f3f560c3cfd",
+                    "---" : "---",
+                    "terminalNo" : "78787878",
+                    "----" : "----",
+                    "clientBranchId" : "1000",
+                    "posType" : "1",
+                    "terminalNo" : "2",
+                    "*" : "*",
+                    "licensekey" : "0955D-JY218-74DBH-2HBHJ",
+                    "headers" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImE5M2IxZTY1ZWUwMTJhMWFhMTBjNGYzMDViMTM1ODkzYWY5OTk3OTE2YmM5MjI2NjMxNDQ0ZWQzMDU5OWM0NzA4Nzg5Y2E1ZTRiMDA0OTQ2In0.eyJhdWQiOiIxMTM4IiwianRpIjoiYTkzYjFlNjVlZTAxMmExYWExMGM0ZjMwNWIxMzU4OTNhZjk5OTc5MTZiYzkyMjY2MzE0NDRlZDMwNTk5YzQ3MDg3ODljYTVlNGIwMDQ5NDYiLCJpYXQiOjE2NDYxMTUzODAsIm5iZiI6MTY0NjExNTM4MCwiZXhwIjoxNjc3NjUxMzgwLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.nM5uZdbgjjLcAXazClT8c4PmFOAQfDvWZnlh5JCvTfW29Xo0VTTGZhKEJ_zYpkUxlp7aBWLMo-E1JxOJ0YRhCXpilOTHNJnlVo-Sk8VdF3BEym_hA-exjQ_E2LgGpHcdSB3OUj6Rr7ez2OUxA2vJoOg8xtVRh1WUGoYOK396uGXeSq8JG0lArvmtw1Jw3mhU6-kSz5evSRh0EAt5MI8O1nfGg2OV_UGY2MVl-Oz0X66kTLScuLSFCvZehinYS4C_PGrJ4GSuB1MzTGTf6_D2RwNaRKjxFmBZ_69fjsPbIkkzSia6QdJfymb9vb4Bbl7Jc-hWDEBk9Xj5nI06WLBuw03Wnrib7GaCUZ3HXyYiYXIyhTQkM72cbLFrDipaNb_5SA7c_stH1Gdt_UtQha26WgPDdBUzB6s9b5bCtfq89IDyeLMlHcocbWO_pnkeAK7lKFCm9PKFYtyFb3q0a3b6NBMzBlC1S1JHqy6gPRohhfjUEF_Yf8cd6l9EAxZ33MyX7a5Xjm5rvMjJ90dyUsammhofVKKD1KodkHjk9qgcuxvF9yR-LMTo2eoD4GhMKn76l1RZP0JnoiAiCD5op10pxIqOE7ZtYNLYNi8WzAwO5nw2GtqMNM_goRa-Trfx2p1SfJubKzMYUE2I8T3vR94CZAaq6FLYD0QAyH2HfNBe3kY"
+                    },
+            "success": "Status Code: [200] send v2 credentials for pos installation, create update id entry",
+            "errors": "Status: Missing required fields.Status Code: [406] Not Acceptable \r\nStatus: Incomplete required fields. Status Code: [406] Not Acceptable\r\nStatus: Client details doesn't exist. Status Code: [406] Not Acceptable\r\nStatus Code: [200] Invalid License Key"
+        },
+        {
+            "api": "Post Update Log API",
+            "description": "To create an api to update the status of a certain update.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/posupdater/post_update_log",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "clientId" : "1000",
+                    "clientNetworkId" : "1000",
+                    "clientBranchid" : "1000",
+                    "posType" : "1",
+                    "type" : "1",
+                    "--" : "--",
+                    "uuid" : "a1f5f49f-b970-b94f-723c-0f3f560c3cfd",
+                    "---" : "---",
+                    "terminalNo" : "78787878",
+                    "----" : "----",
+                    "clientBranchId" : "1000",
+                    "posType" : "1",
+                    "terminalNo" : "2",
+                    "*" : "*",
+                    "update_id" : "1000001",
+                    "installed_on" : "2018-05-07 09:46:49",
+                    "status" : "4"
+                },
+            "success": "Status Code: [200] Save and update status of certain update id",
+            "errors": "Status: Missing required fields.Status Code: [406] Not Acceptable \r\nStatus: Incomplete required fields. Status Code: [406] Not Acceptable\r\nStatus: Client details doesn't exist. Status Code: [406] Invalid Headers\r\nStatus: Cannot update status. Status Code: [406] Not Acceptable"
+        },
+        {
+            "api": "Server Branches API",
+            "description": "To create an api to handle storing and saving server branches",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/server/branches",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "wid" : "200000000000001",
+                    "name" : "Manila",
+                    "datetime" : "2018-05-07 09:46:49",
+                    "show" : "1"
+                },
+            "success": "Status Code: [200] Save server branches",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Server Settings API",
+            "description": "To create an api to handle storing server settings.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/server/settings",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "get_gc_passcode" : "PJVogRZerMZg4B9yqXn8WRLVOrUvuB+hJ1sgZ4+ZGNI=",
+                    "get_member_points_from_current_branch_only" : "0",
+                    "get_request_days" : "7",
+                    "get_request_del_days" : "0",
+                    "get_request_nodel_days" : "0",
+                    "giftcheque_excel" : "giftcheque_excel.php",
+                    "header_logo" : "nelsoft_logo.png"
+                },
+            "success": "Status Code: [200] Save server settings",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Server Status API",
+            "description": "To create an api to handle storing server status.",
+            "endpoint": "http://client-api.nelsoft.ph/api/v1/server/error_reports",
+            "headers": "[1891 10716 10 1 2] \r\n [Encoded Client Details]",
+            "body": {
+                    "cpu_usage" : "47.36456%",
+                    "free_space" : "5000MB",
+                    "ram_usage" : "54.73%",
+                    "total_storage_size" : "231251MB"
+                },
+            "success": "Status Code: [200] Save server status",
+            "errors": "Status Code: [400] Bad Request\r\nStatus Code: [401] Invalid Headers"
+        },
+        {
+            "api": "Get Announcement List API",
+            "description": "To create an api to handle sending announcements to different nelsoft clients.",
+            "endpoint": "http://client-api.nelsoft.ph/index.php/getAnnouncementList?function=getAnnouncementList \r\n http://client-api.nelsoft.ph/index.php/getAnnouncementList?function=getNotification",
+            "headers": "none required",
+            "body": {
+                },
+            "success": "Status Code: [200] Get list of announcements",
+            "errors": "Incomplete Parameters \r\n No Results Found"
+        },
+        {
+            "api": "Get Database Version List API",
+            "description": "To create an api to handle getting list of database versionlists and categories to different nelsoft clients.",
+            "endpoint": "http://client-api.nelsoft.ph/index.php/getDatabaseVersionList?function=getDatabaseVersion&project=[project_code] \r\n http://client-api.nelsoft.ph/index.php/getDatabaseVersionList?function=getCategory&database_version=[version_number]&project=[project_code]",
+            "headers": "none required",
+            "body": {
+                },
+            "success": "Status Code: [200] Get list of announcements",
+            "errors": "Incomplete Parameters \r\n No Results Found"
+        },
+        {
+            "api": "Get File Directory API",
+            "description": "To create an api to handle getting list of file names.",
+            "endpoint": "http://client-api.nelsoft.ph/index.php/getFileDirectory?function=getFileDirectory&folder=[folder_name]&category=[category_name]&project=[project_code] \r\n http://client-api.nelsoft.ph/index.php/getFileDirectory?function=getSpecificFile&folder=[folder_name]&category=[category_name]&project=[project_code]&filename=[file_name]",
+            "headers": "none required",
+            "body": {
+                },
+            "success": "Status Code: [200] Get list of file names",
+            "errors": "Incomplete Parameters \r\n No Results Found"
+        },
+        {
+            "api": "Get Query Function API",
+            "description": "To create an api to get query from clientbase databse using filename.",
+            "endpoint": "http://client-api.nelsoft.ph/index.php/getQueryFunction?function=getQueryFunction&filename=[file_name] ",
+            "headers": "none required",
+            "body": {
+                },
+            "success": "Status Code: [200] Get query data",
+            "errors": "Incomplete Parameters \r\n No Results Found"
+        },
+        {
+            "api": "Payment Methods API",
+            "description": "To create an api to get payment methods list for nelsoft clients.",
+            "endpoint": "http://client-api.nelsoft.ph/index.php/PaymentMethodsAPI?function=getPTUDetails&clientGroupId=[client_group_id]&clientNetworkId=[client_network_id]&clientBranchId=[client_branch_id]&terminal=[terminal_no]",
+            "headers": "none required",
+            "body": {
+                },
+            "success": "Status Code: [200] Get query data",
+            "errors": "Incomplete Parameters \r\n This terminal doesn't exist \r\n Invalid Json Format"
+        },
+        {
+            "api": "Permit To Use API",
+            "description": "To create an api to get PTU data for terminals.",
+            "endpoint": "http://client-api.nelsoft.ph/index.php/PermitToUseAPI?function=getPTUDetails&clientGroupId=[client_group_id]&clientNetworkId=[client_network_id]&clientBranchId=[client_branch_id]&terminal=[terminal_no] \r\n http://client-api.nelsoft.ph/index.php/PermitToUseAPI?function=getPTUDetails&uuid=[uuid]\r\n http://client-api.nelsoft.ph/index.php/PermitToUseAPI?function=getPTUDetails&deviceId=[device_id]&posType=[pos_type] \r\n http://client-api.nelsoft.ph/index.php/PermitToUseAPI?function=getPTUDetails&clientBranchId=[client_branch_id]&posType=[pos_type]&terminal=[terminal_no] ",
+            "headers": "none required",
+            "body": {
+                },
+            "success": "Status Code: [200] Get permit to use data",
+            "errors": "Incomplete Parameters\r\nNo Results Found\r\nNo COR Information\r\nMissing some COR informationt"
+        }
+    ]
+}

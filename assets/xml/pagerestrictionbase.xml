@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<configuration-file>
+	
+	<!-- SUBSCRIPTION -->
+    <page_subscription>0</page_subscription>
+	
+	<!-- DATA -->
+    <page_show_userlist>0</page_show_userlist>
+    <page_show_user>0</page_show_user>
+    <page_show_memberlist>0</page_show_memberlist>
+    <page_show_member>0</page_show_member>
+    <page_show_customerlist>0</page_show_customerlist>
+    <page_show_customer>0</page_show_customer>
+    <page_show_supplierlist>0</page_show_supplierlist>
+    <page_show_supplier>0</page_show_supplier>
+    <page_show_category>0</page_show_category>
+    <page_show_department>0</page_show_department>
+    <page_show_brand>0</page_show_brand>
+    <page_show_productlist>0</page_show_productlist>
+    <page_show_product>0</page_show_product>
+    <page_show_productlist_express>0</page_show_productlist_express>
+    <page_show_bankaccount>0</page_show_bankaccount>
+    <page_show_product_report>0</page_show_product_report>
+
+     <!-- PO -->
+    <page_show_purchaselist>0</page_show_purchaselist>
+    <page_show_purchase>0</page_show_purchase>
+    <page_show_purchase_receivelist>0</page_show_purchase_receivelist>
+    <page_show_purchase_receive>0</page_show_purchase_receive>
+    <page_show_paymentlist>0</page_show_paymentlist>
+    <page_show_payment>0</page_show_payment>
+    <page_show_purchase_returnlist>0</page_show_purchase_returnlist>
+    <page_show_purchase_return>0</page_show_purchase_return>
+    <page_show_otherpaymentlist>0</page_show_otherpaymentlist>
+    <page_show_otherpayment>0</page_show_otherpayment>
+    <page_show_issuechecklist>0</page_show_issuechecklist>
+    <page_show_damagelist>0</page_show_damagelist>
+    <page_show_damage>0</page_show_damage>
+
+    <!-- SALES -->
+    <page_show_salesorderlist>0</page_show_salesorderlist>
+    <page_show_salesorder>0</page_show_salesorder>
+    <page_show_saleslist>0</page_show_saleslist>
+    <page_show_sales>0</page_show_sales>
+    <page_show_counterlist>0</page_show_counterlist>
+    <page_show_counter>0</page_show_counter>
+    <page_show_collectionlist>0</page_show_collectionlist>
+    <page_show_collection>0</page_show_collection>
+    <page_show_otherreceivelist>0</page_show_otherreceivelist>
+    <page_show_otherreceive>0</page_show_otherreceive>
+    <page_show_receivechecklist>0</page_show_receivechecklist>
+    <page_show_poscashcollect>0</page_show_poscashcollect>
+
+    <!-- STOCKS -->
+    <page_show_stockrequesttolist>0</page_show_stockrequesttolist>
+    <page_show_stockrequest>0</page_show_stockrequest>
+    <page_show_stock_deliveryfromlist>0</page_show_stock_deliveryfromlist>
+    <page_show_stock_deliveryfrom>0</page_show_stock_deliveryfrom>
+    <page_show_stockrequestfromlist>0</page_show_stockrequestfromlist>
+    <page_show_stock_deliverylist>0</page_show_stock_deliverylist>
+    <page_show_stock_delivery>0</page_show_stock_delivery>
+
+    <!-- REPORTS -->
+
+    <page_show_prodinvvalue>0</page_show_prodinvvalue>
+    <page_show_producttransactionlist>0</page_show_producttransactionlist>
+    <page_show_productbranchinv>0</page_show_productbranchinv>
+    <page_show_productinventoryadjustreport>0</page_show_productinventoryadjustreport>
+    <page_show_productsupplierreport>0</page_show_productsupplierreport>
+    <page_show_productdeliveryreport>0</page_show_productdeliveryreport>
+    <page_show_brandranking>0</page_show_brandranking>
+    <page_show_categoryranking>0</page_show_categoryranking>
+    <page_show_departmentranking>0</page_show_departmentranking>
+    <page_show_productranking>0</page_show_productranking>
+    <page_show_negativeprofit_report>0</page_show_negativeprofit_report>
+    <page_show_discountsummaryreport>0</page_show_discountsummaryreport>
+    <page_show_invtransactionsummary>0</page_show_invtransactionsummary>
+    <page_show_productsalesorderreport>0</page_show_productsalesorderreport>
+    <page_show_exportproductlist_report>0</page_show_exportproductlist_report>
+    <page_show_productperiodicsalesreport>0</page_show_productperiodicsalesreport>
+
+    <page_show_expensereport>0</page_show_expensereport>
+    <page_show_otherreceive_expensereport>0</page_show_otherreceive_expensereport>
+    <page_show_cashflowreport>0</page_show_cashflowreport>
+    <page_show_incomestatement>0</page_show_incomestatement>
+    <page_show_incomestatement_detail>0</page_show_incomestatement_detail>
+    <page_show_paymentrecord>0</page_show_paymentrecord>
+    <page_show_checkflowreport>0</page_show_checkflowreport>
+    <page_show_posreport_posd>0</page_show_posreport_posd>
+    <page_show_posreport>0</page_show_posreport>
+    <page_show_posorreport_posd>0</page_show_posorreport_posd>
+    <page_show_posorreport>0</page_show_posorreport>
+    <page_show_plot_salesexpress>0</page_show_plot_salesexpress>
+    <page_show_plot_expenseincomereport>0</page_show_plot_expenseincomereport>
+    <page_show_exportsaleslist_report>0</page_show_exportsaleslist_report>
+    <page_show_exportpurchaselist_report>0</page_show_exportpurchaselist_report>
+
+    <page_show_supplierproductreport>0</page_show_supplierproductreport>
+    <page_show_supplier_sales_report>0</page_show_supplier_sales_report>
+    <page_show_supplierbalance>0</page_show_supplierbalance>
+    <page_show_customerbalance>0</page_show_customerbalance>
+    <page_show_customerproductreport>0</page_show_customerproductreport>
+    <page_show_memberreport>0</page_show_memberreport>
+    <page_show_memberreport_detail>0</page_show_memberreport_detail>
+    <page_show_supplierranking>0</page_show_supplierranking>
+
+    <page_show_product_inv_warning>0</page_show_product_inv_warning>
+    <page_show_product_inv_warning_branch>0</page_show_product_inv_warning_branch>
+    <page_show_product_delivery_sales_warning>0</page_show_product_delivery_sales_warning>
+    <page_show_collection_warning>0</page_show_collection_warning>
+
+    <page_show_purchasesummaryreport>0</page_show_purchasesummaryreport>
+    <page_show_exportstockdeliverylist_report>0</page_show_exportstockdeliverylist_report>
+    <page_show_exportpurchasereceivelist_report>0</page_show_exportpurchasereceivelist_report>
+
+    <page_show_seniorreport>0</page_show_seniorreport>
+    <page_show_salesmanreport>0</page_show_salesmanreport>
+    <page_show_pendingpurchases>0</page_show_pendingpurchases>
+    <page_show_pendingrequests>0</page_show_pendingrequests>
+    <page_show_salesorderstatusreport>0</page_show_salesorderstatusreport>
+
+    <!-- OTHERS -->
+    <page_show_productinventoryadjust>0</page_show_productinventoryadjust>
+    <page_show_productinventoryadjust_simplified>0</page_show_productinventoryadjust_simplified>
+    <page_show_banktransaction>0</page_show_banktransaction>
+    <page_show_giftcheque>0</page_show_giftcheque>
+    <page_show_customerproblemlist>0</page_show_customerproblemlist>
+    <page_show_customerproblem>0</page_show_customerproblem>
+    <page_show_task>0</page_show_task>
+    <page_show_task_add>0</page_show_task_add>
+    <page_show_priceadjust>0</page_show_priceadjust>
+    <page_show_productdiscount>0</page_show_productdiscount>
+    <page_show_promoqty>0</page_show_promoqty>
+    <page_show_pospromotion>0</page_show_pospromotion>
+    <page_show_autosyncchecker>0</page_show_autosyncchecker>
+
+    <page_show_pda_inventory>0</page_show_pda_inventory>
+    <page_show_pda_priceadj>0</page_show_pda_priceadj>
+	
+</configuration-file>

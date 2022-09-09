@@ -1,0 +1,44 @@
+{
+    "logs": [
+        {
+            "guidelines": { 
+                "clientbase_api_changelogs guide":"",
+                "the change logs need the required details:":"",
+                "- 'version' = Version number appears on the title part of every logs":"",
+                "- 'description' = Version's short description":"",
+                "this change logs must be on ascending order wherein the highest version is always on the top of the logs or after this guidelines":"",
+                "this json file is sensitive when you put a wrong format, it can lead to errors on the clientbase-api change logs.":"",
+                "\r\n symbol is for the next line":"",
+                "NOTE!: DO NOT REMOVE THIS PART FOR DOCUMENTATION PURPOSE. PROCEED TO THE NEXT JSON.":""
+                }
+        },
+        {
+            "version": "1.0.6",
+            "description": "turn off logs or depreciate function\r\ncurrently use of function is limited rarely used but consuing a lot of harddrive space\r\ntest and make sure all api's still working\r\nmust test all api still working after"
+        },
+        {
+            "version": "1.0.5",
+            "description": "If no update id in for terminal, Create new update id set id as max update id\r\nmust insert all necessary fields same as when inserting new entry in terminal update manager module\r\nGet current version base from last previous completed update id(main or staging), if none default to main branch. (staging/main)\r\nCompare as usual\r\nProceed"
+        },
+        {
+            "version": "1.0.4",
+            "description": "Remove/Modify Clientbranchinfo API to send only response but not add to data in clientbase"
+        },
+        {
+            "version": "1.0.3",
+            "description": "Allow update when status in db is already on going for retries\r\ncreate new endpoint and 2 new tables to store received data\r\npos will be sending all data from config table and syncsettings\r\neach table has 2 columns, 1st is the primary key 'client_license_key' then the next column should be varchar where the other information will be stored using json format\r\njust receive data and save in database no need for validation\r\nmake client_license_key as primary key for both tables\r\nno error message even if this fails \r\nModify API to accomodate the new changes in standardizing POS type\r\nAdd GETPTUAPI additional parameter: Client branchid + Term# + pos type"
+        },
+        {
+            "version": "1.0.2",
+            "description": "add a new end point to receive issues reported by the retail pos and accredgen\r\nAPI structure should be the same as Terminal Manager API\r\nUploaded sample JSON structure with client header details and reported date time\r\nCreate new table **`error_reports`** in clientbase database.\r\n`id`\r\n`clientterminaldid`\r\n`particular`\r\n`value`\r\n`datemodified`\r\nreceived json data will be inserted to table **`error_reports`** \r\nNew API filename **`error_reports.php`**\r\nCreate API for POS Updater that will check if unit is valid for update\r\nrename parameter installedon into installed_on\r\nversion comparison function\r\ninput into database for version should be numbers only\r\nadd software_type as parameter\r\nupdate status into status 5 **UP TO DATE** in table `terminal_update_manager` and save **last activity dates** along with **current version**.\r\nIF **VALID** and json sent status =4 (COMPLETE) and current satus **ON-GOING** (status =2 )\r\nELSE return error status ***'Cannot update status'***.\r\nadd `current_version` to update terminal\r\nchange `status` from ON-HOLD to PENDING after post_update_log\r\nbug fix for update the next `ON-HOLD` to `PENDING`\r\nModify required fields to only need uuid and currentVersion\r\nModify to require fields to only need deviceId and currentVersion\r\nModify update_version_checker to add filter if data is not deleted or status was not updated from pending\r\nAdd cirms license checking before allowing to update in POS Updater"
+        },
+        {
+            "version": "1.0.1",
+            "description": "API that will access and authenticate Amazon s3 cloud storage service using the provided credential but first API should validate the details of the ff:\r\nOutput response for **`Access Key`, `Secret Key` and `Session Token`**\r\nAPI files should be under `clientbase-api` repository.\r\nAdd function in URL parameters to select list of DB versions encoded in SQL Queries module\r\nAPI structure/type is the same as terminal manager API\r\nEndpoint required headers fields (`Client Group ID`, `Client Network ID`, `Branch ID`, `Terminal` and `POS Type`)\r\nAPI should not create new row in terminal if data doesn't exist.\r\nRemove a function where API will create new terminal row in clientbase terminal module if API detected that such terminal doesn't exist yet.\r\ncreate endpoint to return payment method with fields"
+        },
+        {
+            "version": "1.0.0",
+            "description": "new end point that will send different queries as requested by our software\r\nboth pos and servers will send requests to the API\r\nqueries can be found in the administrator page of the web and the superadmin form of the pos\r\nModify clientbase - API for terminal manager for Unit specs and Hardware settings\r\nAdd `show`='1' in where clause in select branch query"
+        }
+    ]
+}

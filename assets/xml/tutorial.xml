@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<tutorial_dropdown>
+	<section>
+    	<category value="1">Data</category>
+ 		<pages>
+ 			<page value="101">Product</page>
+ 			<page value="102">Brand</page>
+ 			<page value="103">Department</page>
+ 			<page value="104">Category</page>
+ 			<page value="105">Supplier</page>
+ 			<page value="106">Customer</page>
+ 			<page value="107">Member</page>
+ 			<page value="108">User</page>
+ 			<page value="109">Bank Account</page>
+ 		</pages>
+ 	</section>
+   	<section>
+    	<category value="2">Purchase and Other Expenses</category>
+ 		<pages>
+ 			<page value="201">Purchase Order</page>
+ 			<page value="202">Purchase Receive</page>
+ 			<page value="203">Payment</page>
+ 			<page value="204">Purchase Return</page>
+ 			<page value="205">Other Payment</page>
+ 			<page value="206">Issued Check List</page>
+ 			<page value="207">Damaged Product</page>
+ 		</pages>
+ 	</section>
+ 	<section>
+    	<category value="3">Sales and Other Income</category>
+ 		<pages>
+ 			<page value="301">Sales and Returns</page>
+ 			<page value="302">Counter</page>
+ 			<page value="303">Collection</page>
+ 			<page value="304">Other Receives</page>
+ 			<page value="305">Received Check List</page>
+ 			<page value="306">POS Cash Collect</page>
+ 		</pages>
+ 	</section>
+    <section>
+    	<category value="4">Stock Transferring</category>
+ 		<pages>
+ 			<page value="401">Stock Requests to Other Branches</page>
+ 			<page value="402">Stock Deliveries From Other Branches</page>
+ 			<page value="403">Stock Requests From Other Branches</page>
+ 			<page value="404">Stock Deliveries To Other Branches</page>
+ 		</pages>
+ 	</section>
+    <section>
+    	<category value="5">Reports</category>
+ 		<pages>
+ 			<page value="501">Supplier Product Report</page>
+ 			<page value="502">Other Payment Report</page>
+ 			<page value="503">Other Receive Report</page>
+ 			<page value="504">POS Reports</page>
+ 			<page value="505">Bank Transaction Report</page>
+ 			<page value="506">Supplier Balance</page>
+ 			<page value="507">Customer Balance</page>
+ 			<page value="508">Pending Purchases</page>
+ 			<page value="509">Payment Report</page>
+ 			<page value="510">Product Inventory Value</page>
+ 			<page value="511">Cash Flow Report</page>
+ 			<page value="512">Income Statement</page>
+ 			<page value="513">Product Transaction Ranking</page>
+ 			<page value="514">Brand Transaction Ranking</page>
+ 			<page value="515">Department Transaction Ranking</page>
+ 			<page value="516">Category Transaction Ranking</page>
+ 			<page value="517">Supplier Transaction Ranking</page>
+ 			<page value="518">Product Transaction List</page>
+ 			<page value="519">Product Branch Inventory</page>
+ 			<page value="520">Graphical Sales Projection</page>
+ 			<page value="521">Other Expense/Income Graph</page>
+ 			<page value="522">Product Supplier Report</page>
+ 			<page value="523">Member Report</page>
+ 			<page value="524">Salesman Report</page>
+ 			<page value="525">Supplier Sales Report</page>
+ 			<page value="526">Product Inventory Adjust Report</page>
+ 			<page value="527">Discounted Summary Report</page>
+ 			<page value="528">Purchases Summary Report</page>
+ 			<page value="529">Senior Report</page>
+ 			<page value="530">Inventory Transaction Summary</page>
+ 			<page value="531">Customer Product Report</page>
+ 			<page value="532">Product Delivery Report</page>
+ 			<page value="533">Negative Profit Products</page>
+ 			<page value="534">Pending Requests</page>
+            <page value="603">Product Inventory Warning</page>
+            <page value="604">Branch Inventory Warning</page>
+            <page value="612">Delivery Sales Warning</page>
+            <page value="605">Collection Warning</page>
+ 		</pages>
+ 	</section>
+    <section>
+    	<category value="6">Others</category>
+ 		<pages>
+ 			<page value="601">Product Inventory Adjustment</page>
+            <page value="602">Bank Transactions</page>
+            <page value="613">Gift Cheques</page>
+            <page value="610">Customer Problem List</page>
+            <page value="611">Tasks List</page>
+            <page value="606">Product Price Adjust</page>
+            <page value="614">Product Discount</page>
+            <page value="607">Product Quantity Promotion</page>
+            <page value="608">POS Promotion</page>
+            <page value="609">Autosync Status Checker</page>
+ 		</pages>
+ 	</section>
+    <section>
+    	<category value="7">Data Collector</category>
+ 		<pages>
+ 			<page value="701">Inventory Entries</page>
+ 			<page value="702">Stock Receive Entries</page>
+ 			<page value="703">Price Adjust Entries</page>
+ 		</pages>
+ 	</section>
+    <section>
+    	<category value="8">Hardware Setup</category>
+ 		<pages>
+ 			<page value="801">Barcode Printer</page>
+            <page value="802">Thermal Printer</page>
+            <page value="803">LQ310</page>
+            <page value="804">Software</page>
+ 		</pages>
+ 	</section>
+    <section>
+    	<category value="9">Third Party Programs</category>
+ 		<pages>
+ 			<page value="901">Ammyy</page>
+            <page value="902">Team Viewer</page>
+            <page value="903">Hamachi</page>
+            <page value="904">Barcode Software</page>
+ 		</pages>
+ 	</section>
+    <section>
+    	<category value="10">FAQ</category>
+ 		<pages>
+ 			<page value="1001">FAQ</page>
+ 		</pages>
+ 	</section>
+ </tutorial_dropdown>
