@@ -28,7 +28,7 @@ class RLCFileServer{
 
 	function getLatestFile ( $path, $date ){
 		$filesPath = $this->getFilesOfDate( $path, $date );
-		$minbatch = 1;
+		$minbatch = 0;
 		$latestFile = "";
 
 		foreach ($filesPath as $value) {

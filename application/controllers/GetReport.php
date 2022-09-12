@@ -12,15 +12,23 @@ class GetReport extends CI_Controller{
 
 	function index ()
 	{
-		$token = $_SERVER['HTTP_TOKEN'];
-		$raw_param = explode("&", $_SERVER['QUERY_STRING']);
-		$param = [];
 
-		if( !isset($token) || $token == "" ){
+		if( !isset($_SERVER['HTTP_TOKEN']) || $_SERVER['HTTP_TOKEN'] == "" ){
 			$this->output->set_status_header('401');
-			echo json_encode("Invalid token");
+			echo json_encode($this->config->item('http_err_msg')['401']);
 			exit;
 		}
+
+		if( !isset($_SERVER['HTTP_DEVICEID']) || $_SERVER['HTTP_DEVICEID'] == "" ){
+			$this->output->set_status_header('400');
+			echo json_encode($this->config->item('http_err_msg')['400']);
+			exit;
+		}
+
+		$token = $_SERVER['HTTP_TOKEN'];
+		$head_deviceId = $_SERVER['HTTP_DEVICEID'];
+		$raw_param = explode("&", $_SERVER['QUERY_STRING']);
+		$param = [];
 
 		foreach ($raw_param as $value) {
 			$keyvalue = explode("=", $value);
@@ -29,13 +37,13 @@ class GetReport extends CI_Controller{
 
 		if( !isset($param['date']) || !isset($param['success'])){
 			$this->output->set_status_header('400');
-			echo json_encode("Incomplete headers");
+			echo json_encode($this->config->item('http_err_msg')['400']);
 			exit;
 		}
 
 		if( $param['date']== "" || $param['success']== ""){
 			$this->output->set_status_header('400');
-			echo json_encode("Incomplete headers");
+			echo json_encode($this->config->item('http_err_msg')['400']);
 			exit;
 		}
 
@@ -54,6 +62,12 @@ class GetReport extends CI_Controller{
 				}
 			}
 
+			if ( $head_deviceId != $deviceId ){
+				$this->output->set_status_header('400');
+				echo json_encode($this->config->item('http_err_msg')['400']);
+				exit;
+			}
+
 			if ( $flag ){
 				$basefolder = "RLC";
 				$year = date("Y", strtotime($param['date']));
@@ -64,7 +78,7 @@ class GetReport extends CI_Controller{
 
 				if($file == ""){
 					$this->output->set_status_header('404');
-					echo json_encode("File not found");
+					echo json_encode($this->config->item('http_err_msg')['404']);
 					exit;
 				}
 
@@ -81,12 +95,11 @@ class GetReport extends CI_Controller{
 
 			    $filename = substr( $file, strrpos($file, "/")+1 );
 			    copy($file, $sentfolder.$filename); # copy to sent folder
-			    echo json_encode("Success");
 			    exit;
 			}
 			else{
 				$this->output->set_status_header('401');
-				echo json_encode("Invalid token");
+				echo json_encode( $this->config->item('http_err_msg')['401'] );
 			}
 		}
 		else{

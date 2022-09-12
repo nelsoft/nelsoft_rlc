@@ -80,7 +80,7 @@ $autoload['helper'] = array('html', 'url', 'file');
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('http_error_message');
 
 
 /*
