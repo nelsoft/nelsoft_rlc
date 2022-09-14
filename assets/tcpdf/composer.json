@@ -14,7 +14,8 @@
 	}
 	],
 	"require": {
-		"php": ">=5.3.0"
+		"php": ">=5.3.0",
+		"phpseclib/phpseclib":"*"
 	},
 	"autoload": {
 		"classmap": [
@@ -32,7 +33,8 @@
 		"tcpdf.php",
 		"tcpdf_filters.php",
 		"tcpdf_parser.php",
-		"unicode_data.php"		
+		"unicode_data.php",
+
 		]
 	}
 }

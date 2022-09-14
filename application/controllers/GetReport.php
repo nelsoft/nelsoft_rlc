@@ -8,11 +8,11 @@ class GetReport extends CI_Controller{
         session_start();
 
         $this->load->helper('RLCFileServer');
+        $this->load->helper('SftpCus');
 	}
 
 	function index ()
 	{
-
 		if( !isset($_SERVER['HTTP_TOKEN']) || $_SERVER['HTTP_TOKEN'] == "" ){
 			$this->output->set_status_header('401');
 			echo json_encode($this->config->item('http_err_msg')['401']);
@@ -49,6 +49,7 @@ class GetReport extends CI_Controller{
 
 		if($param['success'] == "1"){
 			$settingsJson = json_decode(file_get_contents("assets/data/settings.json"));
+			$remoteSettingsJson = json_decode(file_get_contents("assets/data/remote.json"));
 			$directory = "";
 			$deviceId = "";
 
@@ -83,6 +84,7 @@ class GetReport extends CI_Controller{
 				}
 
 	        	sleep(5);
+	        	// Send file to requester
 	        	$this->output->set_status_header('200');
 			    header('Content-Description: File Transfer');
 			    header('Content-Type: application/octet-stream');
@@ -95,6 +97,10 @@ class GetReport extends CI_Controller{
 
 			    $filename = substr( $file, strrpos($file, "/")+1 );
 			    copy($file, $sentfolder.$filename); # copy to sent folder
+
+			    // send to remote
+			    $sftp = new SftpCus();
+			    $sftp->send_file($remoteSettingsJson->host, $remoteSettingsJson->username, $remoteSettingsJson->password, $file, $filename, $remoteSettingsJson->dir.$deviceId."\\");
 			    exit;
 			}
 			else{

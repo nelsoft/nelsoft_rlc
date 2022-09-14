@@ -8,6 +8,7 @@ class ResendReport extends CI_Controller{
         session_start();
 
         $this->load->helper('RLCFileServer');
+        $this->load->helper('SftpCus');
 	}
 
 	function index ()
@@ -53,6 +54,7 @@ class ResendReport extends CI_Controller{
 
 		if($param['success'] == "1"){
 			$settingsJson = json_decode(file_get_contents("assets/data/settings.json"));
+			$remoteSettingsJson = json_decode(file_get_contents("assets/data/remote.json"));
 			$directory = "";
 			$deviceId = "";
 
@@ -92,21 +94,27 @@ class ResendReport extends CI_Controller{
 					$newbatch = 1;
 				}
 
-				$newFile = substr($filename, 0, -1).$newbatch;
-				copy( $file, $filefolder."/".$newFile ); # create new file, incremented batch
+				$newFilename = substr($filename, 0, -1).$newbatch;
+				$newFile = $filefolder."/".$newFilename;
+				copy( $file, $newFile ); # create new file, incremented batch
 
 	        	sleep(5);
+	        	// Send to requester
 	        	$this->output->set_status_header('200');
 			    header('Content-Description: File Transfer');
 			    header('Content-Type: application/octet-stream');
-			    header('Content-Disposition: attachment; filename="'.basename($newFile).'"');
+			    header('Content-Disposition: attachment; filename="'.basename($newFilename).'"');
 			    header('Expires: 0');
 			    header('Cache-Control: must-revalidate');
 			    header('Pragma: public');
-			    header('Content-Length: ' . filesize($filefolder."/".$newFile));
-			    readfile($filefolder."/".$newFile);
+			    header('Content-Length: ' . filesize($newFile));
+			    readfile($newFile);
 
-			    copy( $filefolder."/".$newFile, $sentfolder."/".$newFile ); # copy to sent folder
+			    copy( $newFile, $sentfolder."/".$newFilename ); # copy to sent folder
+
+			    // send to remote
+			    $sftp = new SftpCus();
+			    $sftp->send_file($remoteSettingsJson->host, $remoteSettingsJson->username, $remoteSettingsJson->password, $newFile, $newFilename, $remoteSettingsJson->dir.$deviceId."\\");
 			    exit;
 			}
 			else{

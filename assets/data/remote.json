@@ -1,0 +1,6 @@
+{
+	"host":"26.173.172.115",
+	"username":"test_sftp",
+	"password":"test_sftp",
+	"dir":"\\TestDirectory\\"
+}
