@@ -100,7 +100,12 @@ class GetReport extends CI_Controller{
 
 			    // send to remote
 			    $sftp = new SftpCus();
-			    $sftp->send_file($remoteSettingsJson->host, $remoteSettingsJson->username, $remoteSettingsJson->password, $file, $filename, $remoteSettingsJson->dir.$deviceId."\\");
+			    $sent = $sftp->send_file($remoteSettingsJson->host, $remoteSettingsJson->username, $remoteSettingsJson->password, $file, $filename, $remoteSettingsJson->dir.$settingsJson->clientName."\\".$deviceId."\\");
+
+			    if(!$sent){
+			    	$this->output->set_status_header('502');
+					echo json_encode( $this->config->item('http_err_msg')['502'] );
+			    }
 			    exit;
 			}
 			else{

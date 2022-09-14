@@ -31,9 +31,20 @@ class SftpCus{
 
 		$sftp = new SFTP($server);
 		if (!$sftp->login($user, $pass)) {
-		    exit('Login Failed');
+		    return false;
+		    exit;
 		}
 
+		$dir = trim($remoteDir, "\\");
+		$dir = explode("\\", $dir);
+		$remoteDir = "\\";
+		foreach ($dir as $value) {
+			$remoteDir .= $value."\\";
+			if(!$sftp->is_dir($remoteDir)){
+				$sftp->mkdir($remoteDir);
+			}
+		}
+		
 		if(!$sftp->is_dir($remoteDir)){
 			$sftp->mkdir($remoteDir);
 		}

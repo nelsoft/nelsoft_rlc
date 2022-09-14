@@ -100,7 +100,7 @@ class ResendReport extends CI_Controller{
 
 	        	sleep(5);
 	        	// Send to requester
-	        	$this->output->set_status_header('200');
+	      		$this->output->set_status_header('200');
 			    header('Content-Description: File Transfer');
 			    header('Content-Type: application/octet-stream');
 			    header('Content-Disposition: attachment; filename="'.basename($newFilename).'"');
@@ -114,7 +114,12 @@ class ResendReport extends CI_Controller{
 
 			    // send to remote
 			    $sftp = new SftpCus();
-			    $sftp->send_file($remoteSettingsJson->host, $remoteSettingsJson->username, $remoteSettingsJson->password, $newFile, $newFilename, $remoteSettingsJson->dir.$deviceId."\\");
+			    $sent = $sftp->send_file($remoteSettingsJson->host, $remoteSettingsJson->username, $remoteSettingsJson->password, $newFile, $newFilename, $remoteSettingsJson->dir.$settingsJson->clientName."\\".$deviceId."\\");
+
+			    if(!$sent){
+			    	$this->output->set_status_header('502');
+					echo json_encode( $this->config->item('http_err_msg')['502'] );
+			    }
 			    exit;
 			}
 			else{
